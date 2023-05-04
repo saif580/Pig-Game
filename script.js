@@ -33,7 +33,7 @@ const switchPlayer = function () {
 
 //winner function
 const winner = function () {
-  if (scores[activePlayer] >= 100) {
+  if (scores[activePlayer] >= 20) {
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--winner');
@@ -81,6 +81,7 @@ btnHold.addEventListener('click', function () {
   }
 });
 
+//New Game
 btnNew.addEventListener('click', function () {
   scores = [0, 0];
   score0El.textContent = 0;
@@ -94,9 +95,8 @@ btnNew.addEventListener('click', function () {
   document.querySelector(`.player--1`).classList.remove('player--active');
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   document.getElementById(`current--1`).textContent = 0;
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
+  document.querySelector(`.player--1`).classList.remove('player--winner');
+  document.querySelector(`.player--0`).classList.remove('player--winner');
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.add('player--active');
